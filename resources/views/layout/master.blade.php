@@ -9,6 +9,11 @@
 </head>
 <body>
     <h1>สิ่งที่ต้องทำ</h1>
+    @if(auth()->check())
+    <p>สวัสดี, {{auth()->user()->name}}, <a href="/logout">ออกจากระบบ</a></p>
+    @else
+    <p>สวัสดี, บุคคลทั่วไป</p>
+    @endif
     @yield("content")
     <script
   src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
